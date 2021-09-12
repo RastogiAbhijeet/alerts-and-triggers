@@ -4,6 +4,11 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  
+  const throwError = () => {
+    throw new Error("Making a mess")
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +19,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>EASY PEEZY!</h1>
+        <button onClick={throwError}>Make a mess</button>
       </main>
     </div>
   );
