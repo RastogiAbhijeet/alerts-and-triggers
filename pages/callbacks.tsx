@@ -4,8 +4,8 @@ import Loader from 'components/loader'
 
 export default function CallbackPage() {
   const router = useRouter()
-  const [data, setData] = useState({})
-  const [projects, setProjects] = useState()
+  const [data, setData] = useState<any>({})
+  const [projects, setProjects] = useState<any>()
 
   useEffect(() => {
     const fetchAccessToken = async (code) => {

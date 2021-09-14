@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn migrationsinext build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "run:knex": "NODE_ENV=development TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' knex",
