@@ -12,7 +12,7 @@ export default async function handler(
 
   const {data, error } = await supabaseClient
       .from<any>("members")
-      .insert({github_username: "TEST", telegram_username: "TEST"})
+      .insert({github_username: JSON.stringify(req.body) ?? "CHAKNA", telegram_username: "TEST"})
 
       
 
