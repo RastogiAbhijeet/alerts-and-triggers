@@ -12,12 +12,14 @@ export default async function handler(
       .from<any>("members")
       .insert({github_username: req.body.type, telegram_username: req.body.target})
 
+      console.log("GIVING OUT LOGS")
+
   if(error){
     console.log(error)
     res.status(400).json({ name: "SUPABASE ERROR" })
     return
   }
 
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json({ name: 'John-Doe' })
   return
 }
