@@ -8,6 +8,8 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
 
+  console.log(req.body.payload)
+
   const {data, error } = await supabaseClient
       .from<any>("members")
       .insert({github_username: "TEST", telegram_username: "TEST"})
