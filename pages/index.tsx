@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>E-A-S-Y-P-EE-ZY!</h1>
+        <h1 className={styles.title}>E-A-S-Y-P-E-E-ZY!</h1>
         <button onClick={throwError}>Make a mess</button>
         <p>Hey : {process.env.NEXT_PUBLIC_SENTRY_ENABLED} </p>
       </main>

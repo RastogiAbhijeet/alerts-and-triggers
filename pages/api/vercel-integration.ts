@@ -10,9 +10,9 @@ export default async function handler(
 
   const {data, error } = await supabaseClient
       .from<any>("members")
-      .insert({github_username: req.body.type, telegram_username: req.body.target})
+      .insert({github_username: "TEST", telegram_username: "TEST"})
 
-      console.log("GIVING OUT LOGS")
+      
 
   if(error){
     console.log(error)
