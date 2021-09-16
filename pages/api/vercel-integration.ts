@@ -12,6 +12,7 @@ export default async function handler(
   const author = process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN
   const branch = process.env.VERCEL_GIT_COMMIT_REF
   const commit = process.env.VERCEL_GIT_COMMIT_SHA
+  const chatId = process.env.TELEGRAM_CHAT_ID
 
   const bot = new TelegramBot(token)
 
@@ -20,7 +21,12 @@ export default async function handler(
       .from<any>("members")
       .insert({github_username: req.body.type , telegram_username: process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN})
 
-  await bot.sendMessage("-588019944", `Author : ${author} \nBranch:${branch}\nDEPLOYMENT STATUS: ${req.body.type}`)
+  await bot.sendMessage(chatId, `VERCEL DEPLOYMENT STATUS: \
+   \nAUTHOR: ${author} \
+   \nBRANCH: ${branch} \
+   \nCOMMIT: ${commit} \
+   \nDEPLOYMENT STATUS: ${req.body.type} \
+   `)
 
   if(error){
     console.log(error)
