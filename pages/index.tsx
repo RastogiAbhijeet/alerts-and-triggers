@@ -3,23 +3,17 @@ import Head from "next/head";
 import Image from "next/image";
 
 const Home: NextPage = () => {
-  
-  const throwError = () => {
-    throw new Error("Making a mess")
-  }
-
   return (
-    <div className="xl:flex text-center p-12 ">
+    <div className="p-12 bg-red-200 h-screen w-screen">
       <Head>
         <title>Alerts and Triggers</title>
         <meta name="description" content="You broke the deployment" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
-        <h1 className="bold">E-A-S-Y-P-E-E-ZY!</h1>
-        <button onClick={throwError}>Make a mess</button>
-        <p>Hey : {process.env.NEXT_PUBLIC_SENTRY_ENABLED} </p>
+      <main className="shadow-xl p-10 bg-gray-100 rounded-lg">
+        <p className="text-4xl font-bold pb-2">MUST BE RUST</p>
+        <p className="text-lg fond-semibold">Alerts and triggers integration</p>
       </main>
     </div>
   );

@@ -8,7 +8,3 @@ const local = fs.existsSync("./.env.local")
   : {}
 
 export const env = Object.assign({}, all, development, local)
-
-console.log(env)
-
-// Object.assign(process.env, env)
