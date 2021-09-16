@@ -20,7 +20,7 @@ export default function Configure() {
       if (telegramChatId) {
         const req = {
           telegramChatId,
-          configurationId: router.query.configurationId,
+          configurationId: router.query.configurationId as string,
         };
         const res = await submitTelegramChatId(req);
         if(res){
