@@ -6,6 +6,8 @@ export class IntegrationConfiguration {
   public static async getConfigurationById(configurationId: string){
     const {data, error} = await supabaseClient.from<any>(tableName).select("configuration_id, telegram_chat_id").match({configuration_id: configurationId}).single()
 
+    console.log("DATAAA: ", configurationId)
+
     if(error){
       throw error
     }
