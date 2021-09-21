@@ -9,7 +9,7 @@ export class IntegrationConfiguration {
     console.log("DATAAA: ", configurationId)
 
     if(error){
-      throw error
+      throw `${error} | CONFIGURATION : ${configurationId}`
     }
 
     return {
