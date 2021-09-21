@@ -12,11 +12,11 @@ export default async function handler(
   const author = process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN
   const branch = process.env.VERCEL_GIT_COMMIT_REF
   const commit = process.env.VERCEL_GIT_COMMIT_SHA
-  const {telegramChatId} = await IntegrationConfiguration.getConfigurationById(req.body.configurationId)
+  // const {telegramChatId} = await IntegrationConfiguration.getConfigurationById(req.body.configurationId)
 
   const {data, error } = await supabaseClient
       .from<any>("members")
-      .insert({github_username: `${req.body.type}-${telegramChatId}-${req.body.configurationId}` , telegram_username: process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN})
+      .insert({github_username: `${req.body.type}-${"-588019944"}-${req.body.configurationId}` , telegram_username: process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN})
 
   if(error){
     console.log(error)

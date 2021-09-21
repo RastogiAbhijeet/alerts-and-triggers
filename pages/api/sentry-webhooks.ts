@@ -15,7 +15,7 @@ export default async function handler(
   const level = req.body.data.event.level ?? "CUSTOM ISSUE LEVEL"
   const metadata = JSON.stringify(req.body.data.event.metadata, undefined, "2") ?? "CUSTOM METADATA"
   const errorType = req.body.event.type ?? "CUSTOM ERROR TYPE"
-  const {telegramChatId} = await IntegrationConfiguration.getConfigurationById(req.body.configurationId)
+  // const {telegramChatId} = await IntegrationConfiguration.getConfigurationById(req.body.configurationId)
 
 
   await TelegramService.sendMessage(`SENTRY ERROR: \
@@ -25,7 +25,7 @@ export default async function handler(
    \n\`Error Level\` : ${level} \
    \n\`Error Metadata\` : ${metadata} \
    \n\`Error Type\` : ${errorType} \
-   `, telegramChatId)
+   `, "-588019944")
 
   res.status(200).json({ name: 'John-Doe' })
   return
