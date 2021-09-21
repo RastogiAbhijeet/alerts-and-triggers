@@ -4,7 +4,7 @@ const tableName = "integration_configuration"
 
 export class IntegrationConfiguration {
   public static async getConfigurationById(configurationId: string){
-    const {data, error} = await supabaseClient.from<any>(tableName).select("configuration_id, telegram_chat_id").match({configration_id: configurationId}).single()
+    const {data, error} = await supabaseClient.from<any>(tableName).select("configuration_id, telegram_chat_id").match({configuration_id: configurationId}).single()
 
     if(error){
       throw error
