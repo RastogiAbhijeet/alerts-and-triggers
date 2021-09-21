@@ -9,8 +9,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-
-  const token = process.env.TELEGRAM_BOT_TOKEN
   const author = process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN
   const branch = process.env.VERCEL_GIT_COMMIT_REF
   const commit = process.env.VERCEL_GIT_COMMIT_SHA
