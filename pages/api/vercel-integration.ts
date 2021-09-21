@@ -14,22 +14,22 @@ export default async function handler(
   const commit = process.env.VERCEL_GIT_COMMIT_SHA
   // const {telegramChatId} = await IntegrationConfiguration.getConfigurationById(req.body.configurationId)
 
-  const {data, error } = await supabaseClient
-      .from<any>("members")
-      .insert({github_username: `${req.body.type}-${"-588019944"}-${req.body.configurationId}` , telegram_username: process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN})
+  // const {data, error } = await supabaseClient
+  //     .from<any>("members")
+  //     .insert({github_username: `${req.body.type}-${"-588019944"}-${req.body.configurationId}` , telegram_username: process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN})
 
-  if(error){
-    console.log(error)
-    res.status(400).json({ name: "SUPABASE ERROR" })
-    return
-  }
+  // if(error){
+  //   console.log(error)
+  //   res.status(400).json({ name: "SUPABASE ERROR" })
+  //   return
+  // }
 
   await TelegramService.sendMessage(`VERCEL DEPLOYMENT STATUS: \
    \nAUTHOR: ${author} \
    \nBRANCH: ${branch} \
    \nCOMMIT: ${commit} \
    \nDEPLOYMENT STATUS: ${req.body.type} \
-   `, telegramChatId)
+   `, "-588019944")
 
   res.status(200).json({ name: 'John-Doe' })
   return
