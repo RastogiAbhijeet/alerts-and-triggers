@@ -1,6 +1,6 @@
 import { supabaseClient } from "lib/utils/supabase";
 
-const tableName = "integration-configuration"
+const tableName = "integration_configuration"
 
 export class IntegrationConfiguration {
   public static async getConfigurationById(configurationId: string){
